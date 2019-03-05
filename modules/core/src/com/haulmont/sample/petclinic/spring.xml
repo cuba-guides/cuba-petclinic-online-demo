@@ -2,10 +2,41 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
     <!-- Annotation-based beans -->
     <context:component-scan base-package="com.haulmont.sample.petclinic"/>
+    <!-- Routing datasource to be used for additional data store -->
+    <bean id="cubaDataSource"
+          class="com.haulmont.sample.petclinic.core.OnlineDemoRoutingDatasource">
 
+        <!-- Name of a prototype bean that implements javax.sql.DataSource to route requests to -->
+        <property name="sampleDataSourceBeanName"
+                  value="sampleDataSource"/>
+
+        <!-- This prefix will be added to each database address passed to the routing data source.
+            Effectively defines a JDBC driver to use -->
+        <property name="urlPrefix"
+                  value="jdbc:hsqldb:mem:"/>
+
+        <!-- Database that will be used if no information about user's database is provided -->
+        <property name="defaultDbAddress"
+                  value="common_db"/>
+    </bean>
+
+    <!-- Prototype of a real javax.sql.DataSource implementation to be used by routing data source -->
+    <bean id="sampleDataSource"
+          class="org.apache.commons.dbcp2.BasicDataSource"
+          scope="prototype">
+        <property name="driverClassName" value="org.hsqldb.jdbc.JDBCDriver"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+        <property name="maxTotal" value="5"/>
+    </bean>
+
+    <task:scheduled-tasks scheduler="scheduler">
+        <task:scheduled ref="cubaDataSource" method="cleanup" fixed-rate="60000"/>
+    </task:scheduled-tasks>
 </beans>
