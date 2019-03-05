@@ -90,6 +90,7 @@ configure(coreModule) {
         compileOnly(servletApi)
         jdbc(hsql)
         testRuntime(hsql)
+        compile('org.apache.commons:commons-dbcp2:2.5.0')
     }
 
     task cleanConf(description: 'Cleans up conf directory') {
