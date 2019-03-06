@@ -59,6 +59,8 @@
 
     <!-- End CUBA -->
 
+    <logger name="org.eclipse.jetty" level="INFO"/>
+
     <logger name="eclipselink" level="WARN"/>
 
     <logger name="eclipselink.sql" level="INFO"/>
