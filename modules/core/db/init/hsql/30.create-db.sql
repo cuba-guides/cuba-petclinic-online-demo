@@ -246,3 +246,9 @@ values ('c6ba9697-a71c-3577-2775-8b1355204c22', 1, '2020-05-12 19:23:41', 'admin
 insert into SEC_USER_ROLE
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
 values ('c6ba9697-a71c-3577-2775-8b1355204c23', 1, '2020-05-12 19:23:41', 'admin', '2020-05-12 19:23:41', null, null, null, '0859b00d-1278-5714-d9cf-50e49cf65c31', null, 'helium-theme-minimal');
+
+----------------------------------------------------------------------------------------------------
+-- Changing administrator password
+----------------------------------------------------------------------------------------------------
+update SEC_USER SET PASSWORD='$2a$10$/M6lDzZIJeqL0SDOdnfQkOtw3r.AFNo4.dmMMnmJEY1urWuIuqW9O', PASSWORD_ENCRYPTION='bcrypt'
+where ID='60885987-1b61-4247-94c7-dff348347f93';
