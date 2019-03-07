@@ -1,6 +1,6 @@
 
 buildscript {
-    ext.cubaVersion = '7.0.0'
+    ext.cubaVersion = '7.0.1'
     repositories {
 //        mavenLocal()
         maven {
@@ -225,4 +225,11 @@ task restart(dependsOn: ['stop', ":${modulePrefix}-core:deploy", ":${modulePrefi
 
 task wrapper(type: Wrapper) {
     gradleVersion = '4.10.1'
+}
+
+task buildUberJar(type: CubaUberJarBuilding) {
+    coreJettyEnvPath = 'modules/core/web/META-INF/jetty-env.xml'
+    singleJar = true
+    appProperties = ['cuba.automaticDatabaseUpdate': false]
+    logbackConfigurationFile = 'etc/uber-jar-logback.xml'
 }
