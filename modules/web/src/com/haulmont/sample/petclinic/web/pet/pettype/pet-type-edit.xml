@@ -19,6 +19,9 @@
         <form id="fieldGroup" dataContainer="petTypeCt">
             <column width="250px">
                 <textField property="name"/>
+                <colorPicker property="color"
+                             defaultCaptionEnabled="true"
+                             width="AUTO"/>
             </column>
         </form>
 

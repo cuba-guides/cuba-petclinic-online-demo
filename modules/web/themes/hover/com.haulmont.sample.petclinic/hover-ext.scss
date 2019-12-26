@@ -1,4 +1,9 @@
 /* Define your theme modifications inside next mixin */
 @mixin com_haulmont_sample_petclinic-hover-ext {
-
+  .color-box {
+    width: round($v-unit-size / 2);
+    height: round($v-unit-size / 2);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin-right: round($v-layout-spacing-vertical / 2);
+  }
 }
