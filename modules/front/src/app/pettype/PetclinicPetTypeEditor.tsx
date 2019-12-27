@@ -70,7 +70,7 @@ class PetclinicPetTypeEditor extends React.Component<Props> {
                      style={{marginBottom: '12px'}}>{
             getFieldDecorator('color', {
               normalize: (value: string) => {
-                return (value.startsWith('#') ? value.substring(1) : value).toUpperCase();
+                return value ? (value.startsWith('#') ? value.substring(1) : value).toUpperCase() : value;
               },
               rules: [{
                 required: true,
