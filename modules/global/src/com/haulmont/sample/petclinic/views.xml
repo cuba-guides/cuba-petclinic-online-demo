@@ -15,15 +15,15 @@
     <view class="com.haulmont.sample.petclinic.entity.owner.Owner"
           extends="_local"
           name="owner-with-pets">
-        <property name="pets"
-                  view="_minimal"/>
+        <property name="pets" view="pet-with-type"/>
     </view>
     <view class="com.haulmont.sample.petclinic.entity.pet.Pet"
           extends="_local"
           name="pet-with-owner-and-type">
-        <property name="type"
-                  view="_minimal"/>
-        <property name="owner"
-                  view="_local"/>
+        <property name="type" view="_local"/>
+        <property name="owner" view="_local"/>
+    </view>
+    <view entity="petclinic_Pet" name="pet-with-type" extends="_local">
+        <property name="type" view="_local"/>
     </view>
 </views>

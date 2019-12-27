@@ -1,0 +1,6 @@
+{
+  "name": "cuba-petclinic-generation",
+  "devDependencies": {
+    "@cuba-platform/front-generator": "^2.2.1"
+  }
+}

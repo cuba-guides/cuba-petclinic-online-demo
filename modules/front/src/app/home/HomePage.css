@@ -1,0 +1,14 @@
+.bg-image {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.bg-image > img {
+  width: 100%;
+  max-width: 600px;
+}
