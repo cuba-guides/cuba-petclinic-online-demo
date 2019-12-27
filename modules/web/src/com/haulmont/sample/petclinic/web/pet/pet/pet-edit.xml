@@ -37,6 +37,7 @@
                 <textField property="identificationNumber"/>
                 <dateField property="birthDate"/>
                 <lookupPickerField property="type" optionsContainer="typesDc"/>
+                <lookupField id="generationField" property="generation"/>
                 <lookupPickerField property="owner" optionsContainer="ownersDc"/>
             </column>
         </form>
