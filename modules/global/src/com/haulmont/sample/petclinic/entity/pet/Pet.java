@@ -27,10 +27,21 @@ public class Pet extends NamedEntity {
     @JoinColumn(name = "TYPE_ID")
     protected PetType type;
 
+    @NotNull
+    @Column(name = "GENERATION", nullable = false)
+    protected Integer generation;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "OWNER_ID")
     protected Owner owner;
 
+    public Generation getGeneration() {
+        return generation == null ? null : Generation.fromId(generation);
+    }
+
+    public void setGeneration(Generation generation) {
+        this.generation = generation == null ? null : generation.getId();
+    }
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }

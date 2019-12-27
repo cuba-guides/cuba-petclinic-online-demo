@@ -37,6 +37,7 @@
             <column width="250px">
                 <textField property="name" colspan="2" width="100%"/>
                 <lookupPickerField property="type" optionsContainer="typesDc"/>
+                <lookupField id="generationField" property="generation"/>
                 <lookupPickerField property="owner" optionsContainer="ownersDc"/>
             </column>
             <column width="250px">

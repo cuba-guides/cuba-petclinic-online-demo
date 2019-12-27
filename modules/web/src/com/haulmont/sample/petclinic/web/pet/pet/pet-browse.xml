@@ -123,6 +123,7 @@
                 <column id="birthDate"/>
                 <column id="owner"/>
                 <column id="type"/>
+                <column id="generation"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel" alwaysVisible="true">
