@@ -36,6 +36,8 @@ class App extends React.Component<MainStoreInjected> {
       )
     }
 
+    const menuIndex = 1;
+
     return (
       <Layout className='main-layout'>
         <Layout.Header style={{height: '48px', lineHeight: '48px', padding: '0 12px'}}>
@@ -48,10 +50,10 @@ class App extends React.Component<MainStoreInjected> {
                         style={{background: '#fff'}}>
             <Menu mode="inline"
                   style={{height: '100%', borderRight: 0}}>
-              <Menu.Item key="1">
+              <Menu.Item key={menuIndex}>
                 <NavLink to={'/'}><Icon type="home"/>Home</NavLink>
               </Menu.Item>
-              {menuItems.map(item => menuItem(item))}
+              {menuItems.map((item, index) => menuItem(item, '' + (index + 1 + menuIndex)))}
             </Menu>
           </Layout.Sider>
           <Layout style={{padding: '24px 24px 24px'}}>
@@ -74,14 +76,16 @@ class App extends React.Component<MainStoreInjected> {
   }
 }
 
-function menuItem(item: RouteItem | SubMenu) {
+function menuItem(item: RouteItem | SubMenu, keyString: string) {
   // Sub Menu
 
   if ((item as any).items != null) {
     //recursively walk through sub menus
     return (
-      <Menu.SubMenu title={item.caption}>
-        {(item as SubMenu).items.map(ro => menuItem(ro))}
+      <Menu.SubMenu key={keyString}
+                    title={item.caption}>
+        {(item as SubMenu).items.map((ri, index) =>
+          menuItem(ri, keyString + '-' + (index + 1)))}
       </Menu.SubMenu>
     );
   }
@@ -91,7 +95,7 @@ function menuItem(item: RouteItem | SubMenu) {
   const {menuLink} = item as RouteItem;
 
   return (
-    <Menu.Item key={menuLink}>
+    <Menu.Item key={keyString}>
       <NavLink to={menuLink}>
         <Icon type="bars"/>
         {item.caption}
