@@ -1,0 +1,21 @@
+.Login {
+  border-radius: 4px;
+  /*background: #fff;*/
+  padding: 32px 32px 0;
+  min-width: 300px;
+  /*box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);*/
+}
+
+.logo {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+@media (max-width: 500px) {
+  .Login {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
