@@ -12,8 +12,8 @@ import logo from '../common/images/petclinic_logo_full.png';
 @observer
 class Login extends React.Component<MainStoreInjected> {
 
-  @observable login: string = 'admin';
-  @observable password: string = 'admin';
+  @observable login: string = 'joy';
+  @observable password: string = 'joy';
   @observable performingLoginRequest = false;
 
   @action
