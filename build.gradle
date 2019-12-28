@@ -210,6 +210,11 @@ configure(frontModule) {
     def mainBuildDir = 'build'
 
 
+    node {
+        download true
+        version '10.14.1'
+    }
+
     task buildFrontend(type: NpmTask, dependsOn: npmInstall) {
         args = ['run', 'build']
         inputs.files fileTree('./') {
