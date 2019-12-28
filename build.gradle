@@ -269,4 +269,5 @@ task buildUberJar(type: CubaUberJarBuilding) {
     singleJar = true
     appProperties = ['cuba.automaticDatabaseUpdate': false]
     logbackConfigurationFile = 'etc/uber-jar-logback.xml'
+    polymerBuildDir = '.'
 }
