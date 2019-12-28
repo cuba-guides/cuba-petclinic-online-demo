@@ -1,14 +1,11 @@
 package com.haulmont.sample.petclinic.entity.owner;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import com.haulmont.sample.petclinic.entity.Person;
 import com.haulmont.sample.petclinic.entity.pet.Pet;
 import java.util.List;
-import javax.persistence.OneToMany;
 
 @Table(name = "PETCLINIC_OWNER")
 @Entity(name = "petclinic_Owner")
@@ -30,6 +27,7 @@ public class Owner extends Person {
     @Column(name = "TELEPHONE")
     protected String telephone;
 
+    @OrderBy("identificationNumber")
     @OneToMany(mappedBy = "owner")
     protected List<Pet> pets;
 

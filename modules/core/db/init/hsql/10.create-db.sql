@@ -13,6 +13,7 @@ create table PETCLINIC_PET (
     IDENTIFICATION_NUMBER varchar(255) not null,
     BIRTH_DATE date,
     TYPE_ID varchar(36),
+    GENERATION integer not null,
     OWNER_ID varchar(36),
     --
     primary key (ID)
@@ -29,6 +30,8 @@ create table PETCLINIC_PET_TYPE (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     NAME varchar(255),
+    --
+    COLOR varchar(6) not null,
     --
     primary key (ID)
 )^

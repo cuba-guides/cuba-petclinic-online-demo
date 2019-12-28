@@ -1,7 +1,8 @@
 rootProject.name = 'cuba-petclinic'
 def modulePrefix = 'petclinic'
-include(":${modulePrefix}-global", ":${modulePrefix}-core", ":${modulePrefix}-web", ":${modulePrefix}-web-themes")
+include(":${modulePrefix}-global", ":${modulePrefix}-core", ":${modulePrefix}-web", ":${modulePrefix}-web-themes", ":${modulePrefix}-front")
 project(":${modulePrefix}-global").projectDir = new File(settingsDir, 'modules/global')
 project(":${modulePrefix}-core").projectDir = new File(settingsDir, 'modules/core')
 project(":${modulePrefix}-web").projectDir = new File(settingsDir, 'modules/web')
 project(":${modulePrefix}-web-themes").projectDir = new File(settingsDir, 'modules/web/themes')
+project(":${modulePrefix}-front").projectDir = new File(settingsDir, 'modules/front')
