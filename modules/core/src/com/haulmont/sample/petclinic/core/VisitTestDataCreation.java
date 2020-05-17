@@ -25,7 +25,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import org.springframework.util.CollectionUtils;
 
-@Component
+@Component("petclinic_VisitTestDataCreation")
 public class VisitTestDataCreation {
 
     @Inject
@@ -49,7 +49,7 @@ public class VisitTestDataCreation {
         this.randomVisitDateTime = randomVisitDateTime;
     }
 
-    protected void createData() {
+    public void createData() {
 
         if (visitsExists()) {
             log.info("Visits found in DB. Visit Test data generation is skipped...");

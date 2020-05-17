@@ -17,6 +17,7 @@ import com.haulmont.cuba.gui.screen.UiDescriptor;
 import com.haulmont.cuba.security.global.UserSession;
 import com.haulmont.cuba.web.app.main.MainScreen;
 import com.haulmont.sample.petclinic.entity.visit.Visit;
+import com.haulmont.sample.petclinic.service.VisitTestDataCreationService;
 import com.haulmont.sample.petclinic.web.screens.visit.MyVisits;
 
 import com.vaadin.server.Page;
@@ -41,21 +42,29 @@ public class PetclinicMainScreen extends MainScreen {
     protected HeliumThemeVariantsManager heliumThemeVariantsManager;
     @Inject
     protected Button switchThemeModeBtn;
-
-    private static final Map<String, Icons.Icon> targetThemeIcons = new HashMap<String, Icons.Icon>() {{
-        put("light", CubaIcon.MOON_O);
-        put("dark", CubaIcon.SUN_O);
-    }};
+    @Inject
+    protected VisitTestDataCreationService visitTestDataCreationService;
 
     @Subscribe
-    protected void initMainMenu(AfterShowEvent event) {
+    protected void onAfterShowEvent(AfterShowEvent event) {
+
+        createVisitData();
+
         createMyVisitMenuItem();
         openPetclinicMenuItem();
 
+        initHeliumSwitchBtn();
+
+    }
+
+    private void createVisitData() {
+        visitTestDataCreationService.createVisits();
+    }
+
+    private void initHeliumSwitchBtn() {
         final HeliumThemeSwitchBtnMode currentThemeMode = HeliumThemeSwitchBtnMode
             .fromId(heliumThemeVariantsManager.loadUserAppThemeModeSettingOrDefault());
         updateHeliumSwitchBtn(currentThemeMode);
-
     }
 
     private void updateHeliumSwitchBtn(HeliumThemeSwitchBtnMode mode) {
