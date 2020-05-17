@@ -209,3 +209,8 @@ task restart(dependsOn: ['stop', ":${modulePrefix}-core:deploy", ":${modulePrefi
   }
 }
 restart.finalizedBy start
+task buildUberJar(type: CubaUberJarBuilding) {
+    logbackConfigurationFile = 'etc/uber-jar-logback.xml'
+    singleJar = true
+    appProperties = ['cuba.automaticDatabaseUpdate': true]
+}
