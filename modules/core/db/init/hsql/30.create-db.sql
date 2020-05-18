@@ -190,6 +190,17 @@ values ('e159437c-5f09-8ee8-7827-8584123f4680', 1, '2020-05-07 15:57:26', 'admin
 insert into SEC_USER_ROLE
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
 values ('e159437c-5f09-8ee8-7827-8584123f4681', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '78c1b6c3-f217-dc2e-8af6-e1d502256dd0', null, 'Employee');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('e159437c-5f09-8ee8-7827-8584123f4682', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '78c1b6c3-f217-dc2e-8af6-e1d502256dd0', null, 'Nurse-React');
+
+-- Nurse react
+insert into SEC_USER
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, GROUP_NAMES, IP_MASK, SYS_TENANT_ID)
+values ('196aea3c-2597-83c0-6a96-e11030120798', 1, '2020-05-18 07:50:59', 'admin', '2020-05-18 07:50:59', null, null, null, 'react', 'react', '$2a$10$xLaSJ5JWNcjQZrCkF4oR/.AnDDwhuw4hvnLYV4chjqj2hpPN/mM5G', 'bcrypt', 'React ', 'React', null, null, null, null, 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null, null, null);
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('e159437c-5f09-8ee8-7827-8584123f9682', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '196aea3c-2597-83c0-6a96-e11030120798', null, 'Nurse-React');
 
 
 
@@ -249,5 +260,5 @@ values ('c6ba9697-a71c-3577-2775-8b1355204c23', 1, '2020-05-12 19:23:41', 'admin
 ----------------------------------------------------------------------------------------------------
 -- Changing administrator password
 ----------------------------------------------------------------------------------------------------
-update SEC_USER SET PASSWORD='$2a$10$/M6lDzZIJeqL0SDOdnfQkOtw3r.AFNo4.dmMMnmJEY1urWuIuqW9O', PASSWORD_ENCRYPTION='bcrypt'
-where ID='60885987-1b61-4247-94c7-dff348347f93';
+-- update SEC_USER SET PASSWORD='$2a$10$/M6lDzZIJeqL0SDOdnfQkOtw3r.AFNo4.dmMMnmJEY1urWuIuqW9O', PASSWORD_ENCRYPTION='bcrypt'
+-- where ID='60885987-1b61-4247-94c7-dff348347f93';
