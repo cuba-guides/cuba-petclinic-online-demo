@@ -42,13 +42,9 @@ public class PetclinicMainScreen extends MainScreen {
     protected HeliumThemeVariantsManager heliumThemeVariantsManager;
     @Inject
     protected Button switchThemeModeBtn;
-    @Inject
-    protected VisitTestDataCreationService visitTestDataCreationService;
 
     @Subscribe
     protected void onAfterShowEvent(AfterShowEvent event) {
-
-        createVisitData();
 
         createMyVisitMenuItem();
         openPetclinicMenuItem();
@@ -57,9 +53,7 @@ public class PetclinicMainScreen extends MainScreen {
 
     }
 
-    private void createVisitData() {
-        visitTestDataCreationService.createVisits();
-    }
+
 
     private void initHeliumSwitchBtn() {
         final HeliumThemeSwitchBtnMode currentThemeMode = HeliumThemeSwitchBtnMode

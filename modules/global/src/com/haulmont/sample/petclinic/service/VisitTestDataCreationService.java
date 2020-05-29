@@ -5,4 +5,6 @@ public interface VisitTestDataCreationService {
     String NAME = "petclinic_VisitTestDataCreationService";
 
     void createVisits();
+
+    boolean necessaryToCreateVisitTestData();
 }

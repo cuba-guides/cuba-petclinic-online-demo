@@ -6,18 +6,33 @@ import com.haulmont.cuba.core.global.Messages;
 import com.haulmont.cuba.core.global.TimeSource;
 import com.haulmont.cuba.core.global.UserSessionSource;
 import com.haulmont.cuba.gui.Notifications;
+import com.haulmont.cuba.gui.Notifications.NotificationType;
 import com.haulmont.cuba.gui.Route;
 import com.haulmont.cuba.gui.ScreenBuilders;
+import com.haulmont.cuba.gui.backgroundwork.BackgroundWorkWindow;
 import com.haulmont.cuba.gui.components.*;
+import com.haulmont.cuba.gui.components.Button.ClickEvent;
 import com.haulmont.cuba.gui.components.Calendar;
+import com.haulmont.cuba.gui.components.Calendar.CalendarDateClickEvent;
+import com.haulmont.cuba.gui.components.Calendar.CalendarDayClickEvent;
+import com.haulmont.cuba.gui.components.Calendar.CalendarEventClickEvent;
+import com.haulmont.cuba.gui.components.Calendar.CalendarEventMoveEvent;
+import com.haulmont.cuba.gui.components.Calendar.CalendarEventResizeEvent;
+import com.haulmont.cuba.gui.components.Calendar.CalendarWeekClickEvent;
+import com.haulmont.cuba.gui.components.HasValue.ValueChangeEvent;
+import com.haulmont.cuba.gui.executors.BackgroundTask;
+import com.haulmont.cuba.gui.executors.TaskLifeCycle;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.DataContext;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.gui.screen.LookupComponent;
+import com.haulmont.cuba.web.AppUI;
 import com.haulmont.sample.petclinic.entity.visit.Visit;
 import com.haulmont.sample.petclinic.entity.visit.VisitType;
-import com.vaadin.v7.shared.ui.calendar.CalendarState;
+import com.haulmont.sample.petclinic.service.VisitTestDataCreationService;
+import com.vaadin.v7.shared.ui.calendar.CalendarState.EventSortOrder;
+import java.util.concurrent.TimeUnit;
 import org.springframework.util.CollectionUtils;
 
 import javax.inject.Inject;
@@ -69,6 +84,8 @@ public class VisitBrowse extends StandardLookup<Visit> {
     protected MessageBundle messageBundle;
     @Inject
     protected Messages messages;
+    @Inject
+    protected VisitTestDataCreationService visitTestDataCreationService;
 
     @Subscribe
     protected void onInit(InitEvent event) {
@@ -87,15 +104,45 @@ public class VisitBrowse extends StandardLookup<Visit> {
         current(CalendarMode.WEEK);
     }
 
+    @Subscribe
+    protected void onAfterShow(AfterShowEvent event) {
+        createVisitDataIfNecessary();
+    }
+
+
+    private void createVisitDataIfNecessary() {
+        if (visitTestDataCreationService.necessaryToCreateVisitTestData()) {
+            final AppUI ui = AppUI.getCurrent();
+            BackgroundWorkWindow.show(new BackgroundTask<Void, Void>(60, TimeUnit.SECONDS, this) {
+                                          @Override
+                                          public Void run(TaskLifeCycle<Void> taskLifeCycle) throws Exception {
+                                              visitTestDataCreationService.createVisits();
+                                              ui.access(() -> refreshDataAfterVisitDataCreation());
+                                              return null;
+                                          }
+                                      },
+                messageBundle.getMessage("createVisitDataCaption"),
+                messageBundle.getMessage("createVisitDataMessage")
+            );
+        }
+    }
+
+    private void refreshDataAfterVisitDataCreation() {
+        getScreenData().loadAll();
+        notifications.create(NotificationType.TRAY)
+            .withCaption(messageBundle.getMessage("visitDataCreated"))
+            .show();
+    }
+
     @SuppressWarnings("deprecation")
     private void initSortCalendarEventsInMonthlyView() {
         calendar.unwrap(com.vaadin.v7.ui.Calendar.class)
-                .setEventSortOrder(CalendarState.EventSortOrder.START_DATE_DESC);
+            .setEventSortOrder(EventSortOrder.START_DATE_DESC);
     }
 
 
     @Subscribe("calendar")
-    protected void onCalendarCalendarDayClick(Calendar.CalendarDateClickEvent<LocalDateTime> event) {
+    protected void onCalendarCalendarDayClick(CalendarDateClickEvent<LocalDateTime> event) {
         atDate(
             CalendarMode.DAY,
             event.getDate().toLocalDate()
@@ -103,7 +150,7 @@ public class VisitBrowse extends StandardLookup<Visit> {
     }
 
     @Subscribe("calendar")
-    protected void onCalendarCalendarWeekClick(Calendar.CalendarWeekClickEvent<LocalDateTime> event) {
+    protected void onCalendarCalendarWeekClick(CalendarWeekClickEvent<LocalDateTime> event) {
         atDate(
             CalendarMode.WEEK,
             startOfWeek(
@@ -115,22 +162,22 @@ public class VisitBrowse extends StandardLookup<Visit> {
     }
 
     @Subscribe("navigatorPrevious")
-    protected void onNavigatorPreviousClick(Button.ClickEvent event) {
+    protected void onNavigatorPreviousClick(ClickEvent event) {
         previous(calendarMode.getValue());
     }
 
     @Subscribe("navigatorNext")
-    protected void onNavigatorNextClick(Button.ClickEvent event) {
+    protected void onNavigatorNextClick(ClickEvent event) {
         next(calendarMode.getValue());
     }
 
     @Subscribe("navigatorCurrent")
-    protected void onNavigatorCurrentClick(Button.ClickEvent event) {
+    protected void onNavigatorCurrentClick(ClickEvent event) {
         current(calendarMode.getValue());
     }
 
     @Subscribe("calendarNavigator")
-    protected void onCalendarRangePickerValueChange(HasValue.ValueChangeEvent<LocalDate> event) {
+    protected void onCalendarRangePickerValueChange(ValueChangeEvent<LocalDate> event) {
         if (event.isUserOriginated()) {
             atDate(calendarMode.getValue(), event.getValue());
         }
@@ -152,23 +199,24 @@ public class VisitBrowse extends StandardLookup<Visit> {
         change(calendarMode, PREVIOUS, calendarNavigator.getValue());
     }
 
-    private void change(CalendarMode calendarMode, CalendarNavigationMode navigationMode, LocalDate referenceDate) {
+    private void change(CalendarMode calendarMode, CalendarNavigationMode navigationMode,
+        LocalDate referenceDate) {
         this.calendarMode.setValue(calendarMode);
 
         calendarNavigators
-                .forMode(
-                        CalendarScreenAdjustment.of(calendar, calendarNavigator, calendarTitle),
-                        datatypeFormatter,
-                        calendarMode
-                )
-                .navigate(navigationMode, referenceDate);
+            .forMode(
+                CalendarScreenAdjustment.of(calendar, calendarNavigator, calendarTitle),
+                datatypeFormatter,
+                calendarMode
+            )
+            .navigate(navigationMode, referenceDate);
 
         loadEvents();
     }
 
 
     @Subscribe("calendarMode")
-    protected void onCalendarRangeValueChange(HasValue.ValueChangeEvent event) {
+    protected void onCalendarRangeValueChange(ValueChangeEvent event) {
         if (event.isUserOriginated()) {
             atDate((CalendarMode) event.getValue(), calendarNavigator.getValue());
         }
@@ -180,22 +228,20 @@ public class VisitBrowse extends StandardLookup<Visit> {
         visitsCalendarDl.load();
     }
 
-
-
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Calendar Visit Event Click
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Subscribe("calendar")
-    protected void onCalendarCalendarDayClick(Calendar.CalendarDayClickEvent<LocalDateTime> event) {
+    protected void onCalendarCalendarDayClick(CalendarDayClickEvent<LocalDateTime> event) {
         Screen visitEditor = screenBuilders.editor(Visit.class, this)
-                .newEntity()
-                .withInitializer(visit -> {
-                    visit.setVisitStart(event.getDate());
-                    visit.setVisitEnd(event.getDate().plusHours(1));
-                })
-                .withOpenMode(OpenMode.DIALOG)
-                .build();
+            .newEntity()
+            .withInitializer(visit -> {
+                visit.setVisitStart(event.getDate());
+                visit.setVisitEnd(event.getDate().plusHours(1));
+            })
+            .withOpenMode(OpenMode.DIALOG)
+            .build();
 
         visitEditor.addAfterCloseListener(afterCloseEvent -> {
             if (afterCloseEvent.closedWith(StandardOutcome.COMMIT)) {
@@ -207,12 +253,12 @@ public class VisitBrowse extends StandardLookup<Visit> {
     }
 
     @Subscribe("calendar")
-    protected void onCalendarCalendarEventClick(Calendar.CalendarEventClickEvent<LocalDateTime> event) {
+    protected void onCalendarCalendarEventClick(CalendarEventClickEvent<LocalDateTime> event) {
 
         Screen visitEditor = screenBuilders.editor(Visit.class, this)
-                .editEntity((Visit) event.getEntity())
-                .withOpenMode(OpenMode.DIALOG)
-                .build();
+            .editEntity((Visit) event.getEntity())
+            .withOpenMode(OpenMode.DIALOG)
+            .build();
 
         visitEditor.addAfterCloseListener(afterCloseEvent -> {
             if (afterCloseEvent.closedWith(StandardOutcome.COMMIT)) {
@@ -222,14 +268,13 @@ public class VisitBrowse extends StandardLookup<Visit> {
 
         visitEditor.show();
     }
-
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Filter for Visit Types
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Subscribe("typeMultiFilter")
-    protected void onTypeMultiFilterValueChange(HasValue.ValueChangeEvent event) {
+    protected void onTypeMultiFilterValueChange(ValueChangeEvent event) {
 
         if (event.getValue() == null) {
             visitsCalendarDl.removeParameter("type");
@@ -241,19 +286,17 @@ public class VisitBrowse extends StandardLookup<Visit> {
         loadEvents();
     }
 
-
-
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Visit Changes through Calendar Event Adjustments
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Subscribe("calendar")
-    protected void onCalendarCalendarEventResize(Calendar.CalendarEventResizeEvent<LocalDateTime> event) {
+    protected void onCalendarCalendarEventResize(CalendarEventResizeEvent<LocalDateTime> event) {
         updateVisit(event.getEntity(), event.getNewStart(), event.getNewEnd());
     }
 
     @Subscribe("calendar")
-    protected void onCalendarCalendarEventMove(Calendar.CalendarEventMoveEvent<LocalDateTime> event) {
+    protected void onCalendarCalendarEventMove(CalendarEventMoveEvent<LocalDateTime> event) {
         updateVisit(event.getEntity(), event.getNewStart(), event.getNewEnd());
     }
 
@@ -262,15 +305,15 @@ public class VisitBrowse extends StandardLookup<Visit> {
         visit.setVisitStart(newStart);
         visit.setVisitEnd(newEnd);
         dataContext.commit();
-        notifications.create(Notifications.NotificationType.TRAY)
-                .withCaption(
-                        messageBundle.formatMessage(
-                                "visitUpdated",
-                                messages.getMessage(visit.getType()),
-                                visit.getPetName()
-                        )
+        notifications.create(NotificationType.TRAY)
+            .withCaption(
+                messageBundle.formatMessage(
+                    "visitUpdated",
+                    messages.getMessage(visit.getType()),
+                    visit.getPetName()
                 )
-                .show();
+            )
+            .show();
     }
 
 
