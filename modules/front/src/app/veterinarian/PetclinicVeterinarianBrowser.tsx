@@ -1,19 +1,19 @@
 import * as React from "react";
 import {observer} from "mobx-react";
 import {Button, Card, Icon, Modal, Spin} from "antd";
-import {Vet} from "../../cuba/entities/petclinic_Vet";
+import {Veterinarian} from "../../cuba/entities/petclinic_Veterinarian";
 import {Link} from "react-router-dom";
 import {collection, EntityProperty} from "@cuba-platform/react";
 import {SerializedEntity} from "@cuba-platform/rest";
-import {PetclinicVetManagement} from "./PetclinicVetManagement";
+import {PetclinicVeterinarianManagement} from "./PetclinicVeterinarianManagement";
 
 @observer
-export class PetclinicVetBrowser extends React.Component {
+export class PetclinicVeterinarianBrowser extends React.Component {
 
-  dataCollection = collection<Vet>(Vet.NAME, {view: 'vet-with-specialties', sort: '-updateTs'});
+  dataCollection = collection<Veterinarian>(Veterinarian.NAME, {view: 'veterinarian-with-specialties', sort: '-updateTs'});
   fields = ['firstName', 'lastName', 'specialties',];
 
-  showDeletionDialog = (e: SerializedEntity<Vet>) => {
+  showDeletionDialog = (e: SerializedEntity<Veterinarian>) => {
     Modal.confirm({
       title: `Are you sure you want to delete ${e._instanceName}?`,
       okText: 'Delete',
@@ -39,7 +39,7 @@ export class PetclinicVetBrowser extends React.Component {
     return (
       <div className='page-layout-narrow'>
         <div style={{marginBottom: '12px'}}>
-          <Link to={PetclinicVetManagement.PATH + '/' + PetclinicVetManagement.NEW_SUBPATH}>
+          <Link to={PetclinicVeterinarianManagement.PATH + '/' + PetclinicVeterinarianManagement.NEW_SUBPATH}>
             <Button type="primary" icon="plus">Create</Button>
           </Link>
         </div>
@@ -54,12 +54,12 @@ export class PetclinicVetBrowser extends React.Component {
                   <Icon type='delete'
                         key='delete'
                         onClick={() => this.showDeletionDialog(e)}/>,
-                  <Link to={PetclinicVetManagement.PATH + '/' + e.id} key='edit'>
+                  <Link to={PetclinicVeterinarianManagement.PATH + '/' + e.id} key='edit'>
                     <Icon type='edit'/>
                   </Link>
                 ]}>
             {this.fields.map(p =>
-              <EntityProperty entityName={Vet.NAME}
+              <EntityProperty entityName={Veterinarian.NAME}
                               propertyName={p}
                               value={e[p]}
                               key={p}/>

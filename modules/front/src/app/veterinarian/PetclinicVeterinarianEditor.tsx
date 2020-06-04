@@ -2,12 +2,12 @@ import * as React from "react";
 import {FormEvent} from "react";
 import {Button, Card, Form, message} from "antd";
 import {observer} from "mobx-react";
-import {PetclinicVetManagement} from "./PetclinicVetManagement";
+import {PetclinicVeterinarianManagement} from "./PetclinicVeterinarianManagement";
 import {FormComponentProps} from "antd/lib/form";
 import {Link, Redirect} from "react-router-dom";
 import {IReactionDisposer, observable, reaction} from "mobx";
 import {collection, FormField, instance, Msg} from "@cuba-platform/react";
-import {Vet} from "../../cuba/entities/petclinic_Vet";
+import {Veterinarian} from "../../cuba/entities/petclinic_Veterinarian";
 import {Specialty} from "../../cuba/entities/petclinic_Specialty";
 
 type Props = FormComponentProps & {
@@ -16,9 +16,9 @@ type Props = FormComponentProps & {
 
 
 @observer
-class PetclinicVetEditor extends React.Component<Props> {
+class PetclinicVeterinarianEditor extends React.Component<Props> {
 
-  dataInstance = instance<Vet>(Vet.NAME, {view: 'vet-with-specialties', loadImmediately: false});
+  dataInstance = instance<Veterinarian>(Veterinarian.NAME, {view: 'veterinarian-with-specialties', loadImmediately: false});
   specialtiesDc = collection<Specialty>(Specialty.NAME, {view: '_minimal', sort: 'name'});
 
   @observable
@@ -48,7 +48,7 @@ class PetclinicVetEditor extends React.Component<Props> {
   render() {
 
     if (this.updated) {
-      return <Redirect to={PetclinicVetManagement.PATH}/>
+      return <Redirect to={PetclinicVeterinarianManagement.PATH}/>
     }
 
     const {getFieldDecorator} = this.props.form;
@@ -59,36 +59,36 @@ class PetclinicVetEditor extends React.Component<Props> {
         <Form onSubmit={this.handleSubmit}
               layout='vertical'>
 
-          <Form.Item label={<Msg entityName={Vet.NAME} propertyName='firstName'/>}
+          <Form.Item label={<Msg entityName={Veterinarian.NAME} propertyName='firstName'/>}
                      key='firstName'
                      style={{marginBottom: '12px'}}>{
             getFieldDecorator('firstName', {rules: [{required: true}]})(
-              <FormField entityName={Vet.NAME}
+              <FormField entityName={Veterinarian.NAME}
                          propertyName='firstName'/>
             )}
           </Form.Item>
 
-          <Form.Item label={<Msg entityName={Vet.NAME} propertyName='lastName'/>}
+          <Form.Item label={<Msg entityName={Veterinarian.NAME} propertyName='lastName'/>}
                      key='lastName'
                      style={{marginBottom: '12px'}}>{
             getFieldDecorator('lastName')(
-              <FormField entityName={Vet.NAME}
+              <FormField entityName={Veterinarian.NAME}
                          propertyName='lastName'/>
             )}
           </Form.Item>
 
-          <Form.Item label={<Msg entityName={Vet.NAME} propertyName='specialties'/>}
+          <Form.Item label={<Msg entityName={Veterinarian.NAME} propertyName='specialties'/>}
                      key='specialties'
                      style={{marginBottom: '12px'}}>{
             getFieldDecorator('specialties')(
-              <FormField entityName={Vet.NAME}
+              <FormField entityName={Veterinarian.NAME}
                          propertyName='specialties'
                          optionsContainer={this.specialtiesDc}/>
             )}
           </Form.Item>
 
           <Form.Item style={{textAlign: 'center'}}>
-            <Link to={PetclinicVetManagement.PATH}>
+            <Link to={PetclinicVeterinarianManagement.PATH}>
               <Button htmlType="button">
                 Cancel
               </Button>
@@ -107,10 +107,10 @@ class PetclinicVetEditor extends React.Component<Props> {
   }
 
   componentDidMount() {
-    if (this.props.entityId !== PetclinicVetManagement.NEW_SUBPATH) {
+    if (this.props.entityId !== PetclinicVeterinarianManagement.NEW_SUBPATH) {
       this.dataInstance.load(this.props.entityId);
     } else {
-      this.dataInstance.setItem(new Vet());
+      this.dataInstance.setItem(new Veterinarian());
     }
     this.reactionDisposer = reaction(
       () => {
@@ -128,4 +128,4 @@ class PetclinicVetEditor extends React.Component<Props> {
 
 }
 
-export default Form.create<Props>()(PetclinicVetEditor);
+export default Form.create<Props>()(PetclinicVeterinarianEditor);

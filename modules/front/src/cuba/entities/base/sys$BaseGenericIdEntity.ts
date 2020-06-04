@@ -1,5 +1,7 @@
 export class BaseGenericIdEntity {
-    static NAME = "sys$BaseGenericIdEntity";
+  static NAME = "sys$BaseGenericIdEntity";
 }
-export type BaseGenericIdEntityViewName = "_minimal" | "_local" | "_base";
-export type BaseGenericIdEntityView<V extends BaseGenericIdEntityViewName> = never;
+export type BaseGenericIdEntityViewName = "_base" | "_local" | "_minimal";
+export type BaseGenericIdEntityView<
+  V extends BaseGenericIdEntityViewName
+> = never;

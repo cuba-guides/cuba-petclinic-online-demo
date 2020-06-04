@@ -1,6 +1,8 @@
 import { AbstractConditionDescriptor } from "./sec$AbstractConditionDescriptor";
 export class HeaderConditionDescriptor extends AbstractConditionDescriptor {
-    static NAME = "sec$HeaderConditionDescriptor";
+  static NAME = "sec$HeaderConditionDescriptor";
 }
-export type HeaderConditionDescriptorViewName = "_minimal" | "_local" | "_base";
-export type HeaderConditionDescriptorView<V extends HeaderConditionDescriptorViewName> = never;
+export type HeaderConditionDescriptorViewName = "_base" | "_local" | "_minimal";
+export type HeaderConditionDescriptorView<
+  V extends HeaderConditionDescriptorViewName
+> = never;
