@@ -1,22 +1,22 @@
 ----------------------------------------------------------------------------------------------------
 -- Vets
 ----------------------------------------------------------------------------------------------------
-insert into PETCLINIC_VET
+insert into PETCLINIC_VETERINARIAN
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, FIRST_NAME, LAST_NAME)
 values ('0ff2af01-0864-fca9-17e3-61795c76bf26', 2, '2018-11-05 17:38:39', 'admin', '2018-11-05 17:45:54', 'admin', null, null, 'Professor', 'Oak');
-insert into PETCLINIC_VET
+insert into PETCLINIC_VETERINARIAN
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, FIRST_NAME, LAST_NAME)
 values ('3d9c0a8d-fe96-dd9d-e4c8-43622a40288b', 2, '2018-11-05 17:38:39', 'admin', '2018-11-05 17:45:54', 'admin', null, null, 'Professor', 'Elm');
-insert into PETCLINIC_VET
+insert into PETCLINIC_VETERINARIAN
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, FIRST_NAME, LAST_NAME)
 values ('89823558-4410-1ce6-bf08-e458a3635587', 2, '2018-11-05 17:41:39', 'admin', '2018-11-05 17:48:28', 'admin', null, null, 'Professor', 'Juniper');
-insert into PETCLINIC_VET
+insert into PETCLINIC_VETERINARIAN
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, FIRST_NAME, LAST_NAME)
 values ('a4b53456-6f77-77d7-910c-88f8d6246228', 2, '2018-11-05 17:41:23', 'admin', '2018-11-05 17:47:39', 'admin', null, null, 'Professor', 'Birch');
-insert into PETCLINIC_VET
+insert into PETCLINIC_VETERINARIAN
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, FIRST_NAME, LAST_NAME)
 values ('cd0696db-ceb2-cc38-3783-8df3ac86e411', 2, '2018-11-05 17:41:34', 'admin', '2018-11-05 17:48:01', 'admin', null, null, 'Professor', 'Rowan');
-insert into PETCLINIC_VET
+insert into PETCLINIC_VETERINARIAN
 (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, FIRST_NAME, LAST_NAME)
 values ('fae58016-f5ba-47c3-26f9-387dd4704e2d', 2, '2018-11-05 17:41:48', 'admin', '2018-11-05 17:48:48', 'admin', null, null, 'Professor', 'Sycamore');
 
@@ -37,12 +37,12 @@ INSERT INTO PETCLINIC_SPECIALTY (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, 
 ----------------------------------------------------------------------------------------------------
 -- Vets to Specialties Mappings
 ----------------------------------------------------------------------------------------------------
-INSERT INTO PETCLINIC_VET_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('0ff2af01-0864-fca9-17e3-61795c76bf26', '9d7fb940-4439-9366-5105-d7d7cc972a27');
-INSERT INTO PETCLINIC_VET_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('3d9c0a8d-fe96-dd9d-e4c8-43622a40288b', '1e4ab428-d357-7431-88a2-02bf9380caaf');
-INSERT INTO PETCLINIC_VET_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('89823558-4410-1ce6-bf08-e458a3635587', '90b5b561-c4d3-ebc2-e804-46927812fdce');
-INSERT INTO PETCLINIC_VET_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('a4b53456-6f77-77d7-910c-88f8d6246228', '72501593-d5ea-00ae-fa8e-b38e612c6938');
-INSERT INTO PETCLINIC_VET_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('cd0696db-ceb2-cc38-3783-8df3ac86e411', '9b285d08-ab03-1f78-50e9-eda4b78bf0b0');
-INSERT INTO PETCLINIC_VET_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('fae58016-f5ba-47c3-26f9-387dd4704e2d', '6875768e-5b6a-3e57-02de-01adc15dbd29');
+INSERT INTO PETCLINIC_VETERINARIAN_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('0ff2af01-0864-fca9-17e3-61795c76bf26', '9d7fb940-4439-9366-5105-d7d7cc972a27');
+INSERT INTO PETCLINIC_VETERINARIAN_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('3d9c0a8d-fe96-dd9d-e4c8-43622a40288b', '1e4ab428-d357-7431-88a2-02bf9380caaf');
+INSERT INTO PETCLINIC_VETERINARIAN_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('89823558-4410-1ce6-bf08-e458a3635587', '90b5b561-c4d3-ebc2-e804-46927812fdce');
+INSERT INTO PETCLINIC_VETERINARIAN_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('a4b53456-6f77-77d7-910c-88f8d6246228', '72501593-d5ea-00ae-fa8e-b38e612c6938');
+INSERT INTO PETCLINIC_VETERINARIAN_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('cd0696db-ceb2-cc38-3783-8df3ac86e411', '9b285d08-ab03-1f78-50e9-eda4b78bf0b0');
+INSERT INTO PETCLINIC_VETERINARIAN_SPECIALTY_LINK (VET_ID, SPECIALTY_ID) VALUES ('fae58016-f5ba-47c3-26f9-387dd4704e2d', '6875768e-5b6a-3e57-02de-01adc15dbd29');
 
 
 
@@ -102,7 +102,6 @@ insert into PETCLINIC_PET_TYPE
 values ('fec71826-2cac-6a2a-0960-acc63637d301', 1, '2018-11-05 17:26:41', 'admin', '2018-11-05 17:26:41', null, null, null, 'Fighting', 'C22E28');
 
 
-
 ----------------------------------------------------------------------------------------------------
 -- Owner
 ----------------------------------------------------------------------------------------------------
@@ -147,447 +146,113 @@ INSERT INTO PETCLINIC_PET (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATE
 
 
 ----------------------------------------------------------------------------------------------------
--- Visits
+-- Filter
 ----------------------------------------------------------------------------------------------------
 
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('034fa3d2-656c-371d-1afd-a2cea62a83d8', 1, '2018-11-07 07:52:43.268000', 'admin', '2018-11-07 07:52:43.268000', null, null, null, '2011-11-08', null, 'dd6ad831-9633-ae61-7158-3f717d0cd2f2');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('05eae116-3513-38ef-1096-1c7573448df3', 1, '2018-11-07 07:50:12.248000', 'admin', '2018-11-07 07:50:12.248000', null, null, null, '1999-04-04', null, 'a19d3651-ca5b-7e92-1273-fe35002c3d11');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('15a29dc4-7838-25b9-6ce5-2adff4db3f85', 1, '2018-11-07 07:50:01.509000', 'admin', '2018-11-07 07:50:01.509000', null, null, null, '2008-05-03', null, '4100306c-49cd-0961-bfa3-c50859f1e6c4');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('17acced1-892d-d762-a898-55d9158b2447', 1, '2018-11-07 07:53:09.387000', 'admin', '2018-11-07 07:53:09.387000', null, null, null, '2011-11-23', null, 'd27f2a47-5a8d-ba9e-07c1-ed0c6235ca83');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('21d81dbc-e542-6561-8210-ec94aefcb2bd', 1, '2018-11-07 07:53:52.204000', 'admin', '2018-11-07 07:53:52.204000', null, null, null, '2012-06-12', null, 'a19d3651-ca5b-7e92-1273-fe35002c3d11');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('2664b794-4861-f4e0-84ef-c4aeefb60457', 1, '2018-11-07 07:52:30.052000', 'admin', '2018-11-07 07:52:30.052000', null, null, null, '2018-12-12', null, 'a7d0553f-9fa6-4d9b-f817-e1d31ef08582');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('27a8d911-25e5-03f1-0155-c2a8d0270671', 1, '2018-11-07 07:50:53.479000', 'admin', '2018-11-07 07:50:53.479000', null, null, null, '2018-06-27', null, '0d53e61a-d453-4060-78b0-720fd3f452e5');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('2d0b5193-53ca-3dd6-8bfe-d3a7b68d9afb', 1, '2018-11-07 07:51:09.438000', 'admin', '2018-11-07 07:51:09.438000', null, null, null, '2017-08-29', null, 'da908071-50af-8338-0278-22bf673adeb1');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('3995b508-e224-392f-6f51-db5f43d7210c', 1, '2018-11-07 07:51:44.557000', 'admin', '2018-11-07 07:51:44.557000', null, null, null, '2003-01-20', null, '599d30ba-9c4b-bcc3-689d-ab1662bcc2b5');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('3a8a3031-77de-98d7-9822-4cca09b43943', 1, '2018-11-07 07:51:54.734000', 'admin', '2018-11-07 07:51:54.734000', null, null, null, '2006-08-18', null, '0d53e61a-d453-4060-78b0-720fd3f452e5');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('3f7f0c66-84f3-00ab-d863-caea58b7ee41', 1, '2018-11-07 07:51:23.564000', 'admin', '2018-11-07 07:51:23.564000', null, null, null, '2010-10-17', null, '344b9307-a51b-1985-bdaf-098af78ab704');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('47b0e31b-e6ec-751f-3011-f6a9b394a081', 1, '2018-11-07 07:50:44.200000', 'admin', '2018-11-07 07:50:44.200000', null, null, null, '2017-04-04', null, '8b249acd-4c73-c4e7-bb9f-288ff4624ac1');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('671ade9f-6704-8f80-375e-cac0853cae0b', 1, '2018-11-07 07:53:20.641000', 'admin', '2018-11-07 07:53:20.641000', null, null, null, '2003-11-20', null, 'ebc6b61a-e6cc-8b95-4139-cc76fd408539');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('8591efce-6cf0-de52-7a38-13551821fbfc', 1, '2018-11-07 07:50:33.875000', 'admin', '2018-11-07 07:50:33.875000', null, null, null, '2007-03-01', null, '4aa6369f-d6ef-2304-6337-71e32099e60b');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('8ecb6939-907c-01b7-5506-78d59b5c3e94', 1, '2018-11-07 07:53:43.064000', 'admin', '2018-11-07 07:53:43.064000', null, null, null, '1999-11-19', null, '4100306c-49cd-0961-bfa3-c50859f1e6c4');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('9184db72-f3d9-cb15-5513-431f0ea6f27a', 1, '2018-11-07 07:53:31.946000', 'admin', '2018-11-07 07:53:31.946000', null, null, null, '2004-11-11', null, '4aa6369f-d6ef-2304-6337-71e32099e60b');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('b5286252-b1df-5e16-1369-668fbfa4896c', 1, '2018-11-07 07:54:03.602000', 'admin', '2018-11-07 07:54:03.602000', null, null, null, '2004-07-12', null, 'e66f31a9-fa41-3e76-e881-d139439afc27');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('bb1a75e2-1506-addb-54d4-44c1ea8a5d6f', 1, '2018-11-07 07:51:36.636000', 'admin', '2018-11-07 07:51:36.636000', null, null, null, '2007-12-07', null, 'd83cc7f7-69b5-3830-ff1d-ed74d1e4a79c');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('bb26a0ac-7cc0-cdf4-6d6f-3a19f4a4a0f8', 1, '2018-11-07 07:50:22.382000', 'admin', '2018-11-07 07:50:22.382000', null, null, null, '1998-09-19', null, 'f6c097bb-8fcf-55d1-3949-342f98cc7e62');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('bb9f9b68-5b29-5f8b-9181-c05b776028a6', 1, '2018-11-07 07:52:06.579000', 'admin', '2018-11-07 07:52:06.579000', null, null, null, '2018-01-17', null, '8b249acd-4c73-c4e7-bb9f-288ff4624ac1');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('bdaae2fa-794c-2fec-49e4-7be78bf1c26c', 1, '2018-11-07 07:52:59.090000', 'admin', '2018-11-07 07:52:59.090000', null, null, null, '2013-01-12', null, 'cbc8b9aa-a9ae-f284-be67-7988e6eb9d57');
-INSERT INTO PETCLINIC_VISIT (ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, VISIT_DATE, DESCRIPTION, PET_ID) VALUES ('d22b32fb-d0b5-128e-78e8-2e5ee6309903', 1, '2018-11-07 07:52:19.584000', 'admin', '2018-11-07 07:52:19.584000', null, null, null, '2012-07-04', null, '8b249acd-4c73-c4e7-bb9f-288ff4624ac1');
+insert into SEC_FILTER
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, COMPONENT, NAME, CODE, XML, USER_ID, GLOBAL_DEFAULT, SYS_TENANT_ID)
+values ('9e8d1501-cd36-3167-59d4-d33d63f08566', 4, '2020-05-06 20:59:56', 'admin', '2020-05-06 21:04:07', 'admin', null, null, '[petclinic_Visit.browse].filter', 'Default', null, '<?xml version="1.0" encoding="UTF-8"?>
 
-
+<filter>
+  <and>
+    <c name="pet" class="com.haulmont.sample.petclinic.entity.pet.Pet" operatorType="EQUAL" width="1" type="PROPERTY"><![CDATA[e.pet.id = :component$filter.pet30363]]>
+      <param name="component$filter.pet30363" javaClass="com.haulmont.sample.petclinic.entity.pet.Pet">NULL</param>
+    </c>
+    <c name="pet.owner" class="com.haulmont.sample.petclinic.entity.owner.Owner" caption="Owner" operatorType="EQUAL" width="1" type="PROPERTY"><![CDATA[e.pet.owner.id = :component$filter.pet_owner60844]]>
+      <param name="component$filter.pet_owner60844" javaClass="com.haulmont.sample.petclinic.entity.owner.Owner">NULL</param>
+    </c>
+    <c name="type" class="com.haulmont.sample.petclinic.entity.visit.VisitType" operatorType="EQUAL" width="1" type="PROPERTY"><![CDATA[e.type = :component$filter.type42592]]>
+      <param name="component$filter.type42592" javaClass="com.haulmont.sample.petclinic.entity.visit.VisitType">NULL</param>
+    </c>
+  </and>
+</filter>
+', null, true, null);
 
 
 
 ----------------------------------------------------------------------------------------------------
--- Demo role
+-- Users
 ----------------------------------------------------------------------------------------------------
-insert into SEC_ROLE
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, NAME, LOC_NAME, DESCRIPTION, ROLE_TYPE, IS_DEFAULT_ROLE)
-values ('a22e037d-ce94-8699-0c7c-953dc2e3610f', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 'Demo', null, 'Role for demo user', 0, null);
 
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e48d5196-8376-052d-6f5a-66d36a63262e', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sys$Category.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('34492f6c-71b5-cbd7-ff6f-bb17c911da6a', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 40, 'cuba.restApi.enabled', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('9b23116f-bc66-c96f-990c-5c89acebf0ee', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Role:create', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e165578b-5709-a768-fc05-93d97a6b8df1', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sec$SessionLogEntry.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('30a53aa8-c919-74c2-bf5f-f4aee3c56b68', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$User:delete', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('b94e57f5-082d-31fa-f759-488e740e643b', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sys$SendingMessage.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('4827ff93-3f57-2f3d-23dc-4c5ab21f3389', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 40, 'cuba.gui.showExceptionDetails', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('8a7e50bb-e926-897e-83da-be98bb40f14d', 1, '2019-03-07 17:08:31', 'admin', '2019-03-07 17:08:31', null, null, null, 20, 'sec$UserRole:delete', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('832ccb22-dfbd-79da-3073-84c85066a3e1', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sec$UserSessionEntity.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('b9fa947e-12ed-44a9-5529-123fb38e6d8d', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 40, 'cuba.gui.showInfo', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('4e9da7fe-9af6-4931-1130-d6002ece63cc', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Role:read', 1, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('fa06e0c9-99e5-d49e-0057-c8c08463bc19', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Group:delete', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('5830065f-4e88-7766-1a17-9c88b7ac812b', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Group:update', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('42606449-7e39-d1c1-2db0-24a46734e0ec', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'entityRestore', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('0c93e23a-71ef-5b56-5c83-71de539bbb49', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'entityLog', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('ca479b66-bb00-1077-3ae7-9c47a475395c', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sec$ScreenHistory.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('4e49959c-4e92-1128-68cc-4c3801f3588e', 1, '2019-03-07 17:08:31', 'admin', '2019-03-07 17:08:31', null, null, null, 20, 'sec$UserRole:read', 1, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('362a3924-1c51-d997-2a1f-967fb50f1ecf', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Group:read', 1, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('fdce80f1-1536-7cd9-26c3-aff760a6d3e9', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'performanceStatistics', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('b3cad350-54e0-e8dc-934f-2b6bbe04fe6a', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 10, 'logWindow', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f7135c55-8b8e-c6cc-0cba-5a151b18de5f', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sys$ScheduledTask.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('24c03edb-4688-a7cf-edd6-f1bd767835e1', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'appProperties', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('efb5ede4-604e-4f40-c2f8-2f74bca9d494', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'jmxConsole', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('0a466c37-e416-a8d0-7a2f-af370498a919', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 40, 'cuba.gui.administration.downloadlogs', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('3a81577e-f9ab-af83-3d59-b175634cef58', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'serverLog', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('a3433a01-5dbf-0b12-4ad0-961997cd6a04', 1, '2019-03-07 17:08:31', 'admin', '2019-03-07 17:08:31', null, null, null, 20, 'sec$UserRole:update', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('2640f3a7-e72b-cd79-b97f-1d747621536f', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Group:create', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('99f51a5c-1898-9de9-84c0-efbdf499984f', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sys$FileDescriptor.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('63d1c2ea-603c-3494-d8f5-659d65dffdd0', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'sys$LockInfo.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('49ecda84-6e48-3e13-5731-6b63c6bc6468', 1, '2019-03-07 17:04:43', 'admin', '2019-03-07 17:04:43', null, null, null, 10, 'entityInspector.browse', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e125922f-9556-c6e0-a376-42d770441aac', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$User:update', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('00dfe3f7-43be-33e2-3ba6-035bf998e527', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$User:read', 1, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e953962d-916a-805f-ad53-5b46bd035d2a', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Role:update', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('3cfd7ca6-992e-f388-7416-43f67e6c8788', 1, '2019-03-07 17:08:31', 'admin', '2019-03-07 17:08:31', null, null, null, 20, 'sec$UserRole:create', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('78b893a9-6f56-eeb5-3fde-2754440a5f8e', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$Role:delete', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('5b063cf4-204b-418e-3a8c-3bc323799ebc', 1, '2019-03-07 08:09:44', 'admin', '2019-03-07 08:09:44', null, null, null, 20, 'sec$User:create', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('c2643116-d4f9-a859-90e1-78d6ae97e743', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$Constraint:update', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('2e1fcd3b-4cd2-ea20-8c00-50fb4ad98bc2', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$Constraint:read', 1, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e2a894f5-c0d1-9ddf-ea4d-cdb0e9e1be32', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$Constraint:delete', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('afadffe0-25fa-a64e-5ed5-75ed784e32b0', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$Constraint:create', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('11843fee-5145-d94f-8172-378c0436a5f4', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$SessionAttribute:delete', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f4850fea-390f-62c4-73ca-31c2e3fdc60c', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$SessionAttribute:read', 1, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('aaf16bb7-08d8-466c-e8c6-f01ee57ae074', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$SessionAttribute:create', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('301a786e-d244-2828-a115-7f6da4ada1a4', 1, '2019-11-28 17:10:00', 'admin', '2019-11-28 17:10:00', null, null, null, 20, 'sec$SessionAttribute:update', 0, 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
-
-
-
-
-----------------------------------------------------------------------------------------------------
--- Demo user
-----------------------------------------------------------------------------------------------------
+-- Nurse Joy
 insert into SEC_USER
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, IP_MASK)
-values ('1d268db1-2f4a-bfb0-e341-762280bf3226', 1, '2019-03-07 08:10:07', 'admin', '2019-03-07 08:10:07', null, null, null, 'demo', 'demo', '$2a$10$v5M794bNfTT9p7eBHtwEGeXB3q1h7YbNY3eryyP06lN/Ng8u8zxkm', 'bcrypt', 'Demo User', 'Demo', 'User', null, null, 'demo.user@petclinic.com', 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null);
-
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, GROUP_NAMES, IP_MASK, SYS_TENANT_ID)
+values ('78c1b6c3-f217-dc2e-8af6-e1d502256dd0', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, 'joy', 'joy', '$2a$10$TiUlTNX6VKpyHgargbleuOOmxF6.tx44r/haVxq/5MVPYdWebo9Ly', 'bcrypt', 'Nurse Joy', 'Nurse', 'Joy', null, null, null, 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null, null, null);
 insert into SEC_USER_ROLE
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID)
-values ('78733eb3-7d28-61c6-c34f-3760b59e2653', 1, '2019-03-07 08:10:07', 'admin', '2019-03-07 08:10:07', null, null, null, '1d268db1-2f4a-bfb0-e341-762280bf3226', 'a22e037d-ce94-8699-0c7c-953dc2e3610f');
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('c3ac9428-ef84-3aa3-d864-2c729e540553', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '78c1b6c3-f217-dc2e-8af6-e1d502256dd0', null, 'Nurse');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('e017d481-d700-dc52-a974-b13a9e701655', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '78c1b6c3-f217-dc2e-8af6-e1d502256dd0', null, 'system-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('e159437c-5f09-8ee8-7827-8584123f4680', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '78c1b6c3-f217-dc2e-8af6-e1d502256dd0', null, 'helium-theme-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('e159437c-5f09-8ee8-7827-8584123f4681', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '78c1b6c3-f217-dc2e-8af6-e1d502256dd0', null, 'Employee');
 
 
-
-----------------------------------------------------------------------------------------------------
--- Demo React role
-----------------------------------------------------------------------------------------------------
-insert into SEC_ROLE
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, NAME, LOC_NAME, DESCRIPTION, ROLE_TYPE, IS_DEFAULT_ROLE)
-values ('689a4c5b-9cc8-c933-9440-cf69f1b5d9d9', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 'Demo React', null, 'Role for react demo user', 0, false);
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('59ec2878-02ba-a158-e4fd-2acf10b36b77', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sys$SendingMessage.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('3f0a6a64-88fc-ed4e-ba9e-7555357d1a6e', 1, '2019-12-27 11:22:16', 'admin', '2019-12-27 11:22:16', null, null, null, 10, 'sec$Role.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('66185290-1017-870a-0fea-a67fef3ba63d', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$UserRole:create', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('4f18f858-3f41-1ddc-e93c-cba9f6a3e3e6', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'logWindow', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('d383c0b7-0920-baf8-6ff5-cd440ae61175', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Group:update', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f9a226f8-f243-c3a6-465f-1b89d8f04a56', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$User:delete', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f52a6dd3-3e48-654b-9f5a-c196ed696c90', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$UserRole:delete', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('25791a62-a48c-7e89-986f-7609ffcb7aa3', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sys$ScheduledTask.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('0362b4be-7e34-a397-1a4b-4f3967eb2cf6', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Group:delete', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('173d89df-c300-4442-2afa-d8f23e8417bd', 1, '2019-12-27 11:22:16', 'admin', '2019-12-27 11:22:16', null, null, null, 10, 'sec$User.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('ad8d1b3f-551a-c9ee-c039-c88afbe61502', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Group:create', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('cd68584e-6dfd-df57-64c2-7fea1d85e1f0', 1, '2019-12-27 11:22:16', 'admin', '2019-12-27 11:22:16', null, null, null, 40, 'cuba.restApi.fileUpload.enabled', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('c66a0ff7-580f-d3c7-8b4f-9ebaea96b5af', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Role:delete', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('c2a79dd7-91ab-7abd-e9a9-103392328414', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Constraint:create', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('9b095e6c-0ca4-d771-897c-81f44f0e17ab', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Role:create', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('cd7c21d4-03bc-22f2-1687-3930ff5b9657', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 40, 'cuba.gui.showInfo', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('5659544b-1d10-7efe-7795-abfb35111d9d', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Constraint:delete', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('98132d62-ca48-cde1-b0a9-a93dfe6c72fe', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Constraint:update', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('1c605a17-7b70-3aed-b1aa-4393efb817b4', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'entityRestore', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('762a0fcb-c360-c14f-0dd2-81813ee7daa5', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 20, 'sec$UserRole:read', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('a26f839e-8154-aefa-d41f-b035c05918cc', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 40, 'cuba.gui.administration.downloadlogs', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('3611c4c0-4327-6437-640c-80caad4725e1', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sec$SessionLogEntry.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('662e73c8-1f2b-c9a0-9aad-7d7e3364f93e', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'performanceStatistics', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('84ab50a3-6f0e-b7e4-1fc8-909a87705be4', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 20, 'sec$SessionAttribute:read', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('a6e35f22-b1e3-6ac5-3aa1-b795066efe18', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sys$Category.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f080058e-3e84-e9c4-65a9-2b025f72e772', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sys$LockInfo.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f5990d4f-3b72-5c54-2a86-31dc11bbf0b9', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$User:create', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('3000ac0a-f414-6d19-a295-49cce8a42693', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'appProperties', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('811e5708-948d-ac9c-fcf1-dd39afbdfe9b', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'serverLog', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('fb0c0dc7-90f3-116d-98f7-53da5b969447', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sys$FileDescriptor.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('6b16b2e8-7c07-8d76-0558-2479ea01e904', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$SessionAttribute:update', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e21b7f18-e164-5164-98d4-4e4db69ce86a', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$User:update', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('7774257e-5375-cb3f-f337-e146ac2d9b6d', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 20, 'sec$Constraint:read', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('c4179c84-86fb-cfee-a66a-fbd7bcbcf4f6', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$SessionAttribute:delete', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('7c9952d9-268f-9abf-93cf-3558f0fa642f', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sec$ScreenHistory.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('5d8e2644-882c-67ba-5c83-34d78ee6fa1d', 1, '2019-12-27 11:22:16', 'admin', '2019-12-27 11:22:16', null, null, null, 10, 'administration', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e24a85a3-742b-8061-98c3-c0f30ffcd25c', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'entityLog', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('fbb51750-233a-1928-0973-f7b036b633f6', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'sec$UserSessionEntity.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('33188f18-444b-1a0f-884a-30bfe4c9624e', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 20, 'sec$Role:read', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('e355e86e-34f6-452b-7f64-07ab858b29d4', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$SessionAttribute:create', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('9b666c99-6f77-f9c5-f4d6-3834c72a3432', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 20, 'sec$Group:read', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('bdcafe99-3fe1-967e-e9e3-8d9bcfece220', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 40, 'cuba.gui.showExceptionDetails', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('85e4ba27-613c-c350-e331-02197f40517c', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$Role:update', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('aa7970e9-22fb-0990-1741-856e5482b96b', 1, '2019-12-27 11:22:16', 'admin', '2019-12-27 11:22:16', null, null, null, 10, 'sec$Group.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('119d7006-b35b-df0a-a790-f54d2a46cd6c', 2, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:22:16', 'admin', null, null, 20, 'sec$User:read', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('f4d791ad-919a-7148-4542-d74f00e99032', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'jmxConsole', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('73bdc465-4e11-d70c-2924-ae00946691f8', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 10, 'entityInspector.browse', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-insert into SEC_PERMISSION
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, PERMISSION_TYPE, TARGET, VALUE_, ROLE_ID)
-values ('57fb6ced-6660-2379-84af-2b94c0809d8b', 1, '2019-12-27 11:19:27', 'admin', '2019-12-27 11:19:27', null, null, null, 20, 'sec$UserRole:update', 0, '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
-
-
-
-----------------------------------------------------------------------------------------------------
--- Demo React user
-----------------------------------------------------------------------------------------------------
+-- Nurse Comfey
 insert into SEC_USER
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, IP_MASK)
-values ('ca5347e4-23db-654c-238a-7bb326c2d549', 2, '2019-12-27 11:25:13', 'admin', '2019-12-27 11:25:42', 'admin', null, null, 'demo-react', 'demo-react', '$2a$10$MSHBi8i8bh1dDeeognrto.3EsvuuLoZI0bOXyI3EwoWA8o24HETSS', 'bcrypt', 'Demo React User', 'Demo', 'User', 'React', null, 'demo-react.user@petclinic.com', 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null);
-
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, GROUP_NAMES, IP_MASK, SYS_TENANT_ID)
+values ('5769d573-a189-70a1-896f-a5c367a51290', 1, '2020-05-12 09:34:58', 'admin', '2020-05-12 09:34:58', null, null, null, 'comfey', 'comfey', '$2a$10$5J.1mQv1jbqjVBAjrLTdVu73i0dEYV6Uzayq.4lhKWFyzT.xxUuKC', 'bcrypt', 'Nurse Comfey', 'Nurse', 'Comfey', null, null, null, 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null, null, null);
 insert into SEC_USER_ROLE
-(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID)
-values ('a59fdd8e-c87a-f885-a509-c745262f5774', 1, '2019-12-27 11:25:42', 'admin', '2019-12-27 11:25:42', null, null, null, 'ca5347e4-23db-654c-238a-7bb326c2d549', '689a4c5b-9cc8-c933-9440-cf69f1b5d9d9');
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('7a5aa7c2-7aee-b5ba-ff87-f50d755ad357', 1, '2020-05-12 09:34:58', 'admin', '2020-05-12 09:34:58', null, null, null, '5769d573-a189-70a1-896f-a5c367a51290', null, 'Nurse');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('8ff5621d-1fef-31e1-1c49-ad076b3b1ca8', 1, '2020-05-12 09:34:58', 'admin', '2020-05-12 09:34:58', null, null, null, '5769d573-a189-70a1-896f-a5c367a51290', null, 'system-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('2ce1241a-5924-32ee-6152-02d530ac52ae', 1, '2020-05-12 09:34:58', 'admin', '2020-05-12 09:34:58', null, null, null, '5769d573-a189-70a1-896f-a5c367a51290', null, 'helium-theme-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('2ce1241a-5924-32ee-6152-02d530ac52a1', 1, '2020-05-12 09:34:58', 'admin', '2020-05-12 09:34:58', null, null, null, '5769d573-a189-70a1-896f-a5c367a51290', null, 'Employee');
 
+
+
+-- Prof. Oak
+insert into SEC_USER
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, GROUP_NAMES, IP_MASK, SYS_TENANT_ID)
+values ('a16a7c13-8909-9dbf-6b64-80c15da25042', 1, '2020-05-12 19:20:17', 'admin', '2020-05-12 19:20:17', null, null, null, 'oak', 'oak', '$2a$10$m3UYVx.NKqAn/Yoy7NHwluV2pR2RbjxJm5WARMjbQ2X3A89u2PbfO', 'bcrypt', 'Prof. Oak', 'Prof.', 'Oak', null, null, null, 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null, null, null);
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('bd5b097c-4782-3598-e10d-ddf88af799c1', 1, '2020-05-12 19:20:17', 'admin', '2020-05-12 19:20:17', null, null, null, 'a16a7c13-8909-9dbf-6b64-80c15da25042', null, 'system-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('bd5b097c-4782-3598-e10d-ddf88af799c2', 1, '2020-05-12 19:20:17', 'admin', '2020-05-12 19:20:17', null, null, null, 'a16a7c13-8909-9dbf-6b64-80c15da25042', null, 'helium-theme-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('bd5b097c-4782-3598-e10d-ddf88af744dd', 1, '2020-05-12 19:20:17', 'admin', '2020-05-12 19:20:17', null, null, null, 'a16a7c13-8909-9dbf-6b64-80c15da25042', null, 'Veterinarian');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('bd5b097c-4782-3598-e10d-ddf88af744de', 1, '2020-05-12 19:20:17', 'admin', '2020-05-12 19:20:17', null, null, null, 'a16a7c13-8909-9dbf-6b64-80c15da25042', null, 'Employee');
+
+-- Prof. Juniper
+insert into SEC_USER
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, GROUP_NAMES, IP_MASK, SYS_TENANT_ID)
+values ('0859b00d-1278-5714-d9cf-50e49cf65c31', 1, '2020-05-12 19:23:41', 'admin', '2020-05-12 19:23:41', null, null, null, 'juniper', 'juniper', '$2a$10$oLluGjvwtwJwpjC8Xlz0zuFjQbpg8e5UiL.xtUkUkskU.WW8MtwYi', 'bcrypt', 'Prof. Juniper', 'Prof.', 'Juniper', null, null, null, 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null, null, null);
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('c6ba9697-a71c-3577-2775-8b1355201365', 1, '2020-05-12 19:23:41', 'admin', '2020-05-12 19:23:41', null, null, null, '0859b00d-1278-5714-d9cf-50e49cf65c31', null, 'system-minimal');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('c6ba9697-a71c-3577-2775-8b1355204c21', 1, '2020-05-12 19:23:41', 'admin', '2020-05-12 19:23:41', null, null, null, '0859b00d-1278-5714-d9cf-50e49cf65c31', null, 'Veterinarian');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('c6ba9697-a71c-3577-2775-8b1355204c22', 1, '2020-05-12 19:23:41', 'admin', '2020-05-12 19:23:41', null, null, null, '0859b00d-1278-5714-d9cf-50e49cf65c31', null, 'Employee');
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('c6ba9697-a71c-3577-2775-8b1355204c23', 1, '2020-05-12 19:23:41', 'admin', '2020-05-12 19:23:41', null, null, null, '0859b00d-1278-5714-d9cf-50e49cf65c31', null, 'helium-theme-minimal');
+
+
+-- react frontend user
+insert into SEC_USER
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, LOGIN, LOGIN_LC, PASSWORD, PASSWORD_ENCRYPTION, NAME, FIRST_NAME, LAST_NAME, MIDDLE_NAME, POSITION_, EMAIL, LANGUAGE_, TIME_ZONE, TIME_ZONE_AUTO, ACTIVE, CHANGE_PASSWORD_AT_LOGON, GROUP_ID, GROUP_NAMES, IP_MASK, SYS_TENANT_ID)
+values ('196aea3c-2597-83c0-6a96-e11030120798', 1, '2020-05-18 07:50:59', 'admin', '2020-05-18 07:50:59', null, null, null, 'react', 'react', '$2a$10$xLaSJ5JWNcjQZrCkF4oR/.AnDDwhuw4hvnLYV4chjqj2hpPN/mM5G', 'bcrypt', 'React ', 'React', null, null, null, null, 'en', null, null, true, false, '0fa2b1a5-1d68-4d69-9fbd-dff348347f93', null, null, null);
+insert into SEC_USER_ROLE
+(ID, VERSION, CREATE_TS, CREATED_BY, UPDATE_TS, UPDATED_BY, DELETE_TS, DELETED_BY, USER_ID, ROLE_ID, ROLE_NAME)
+values ('e159437c-5f09-8ee8-7827-8584123f9682', 1, '2020-05-07 15:57:26', 'admin', '2020-05-07 15:57:26', null, null, null, '196aea3c-2597-83c0-6a96-e11030120798', null, 'react-frontend');
 
 
 

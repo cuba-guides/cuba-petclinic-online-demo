@@ -1,5 +1,5 @@
 export class KeyValueEntity {
-    static NAME = "sys$KeyValueEntity";
+  static NAME = "sys$KeyValueEntity";
 }
-export type KeyValueEntityViewName = "_minimal" | "_local" | "_base";
+export type KeyValueEntityViewName = "_base" | "_local" | "_minimal";
 export type KeyValueEntityView<V extends KeyValueEntityViewName> = never;

@@ -1,19 +1,16 @@
 package com.haulmont.sample.petclinic.entity.pet;
 
-import com.haulmont.sample.petclinic.entity.NamedEntity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import com.haulmont.sample.petclinic.entity.NamedEntity;
 
 @Table(name = "PETCLINIC_PET_TYPE")
 @Entity(name = "petclinic_PetType")
 public class PetType extends NamedEntity {
     private static final long serialVersionUID = -2633909809493220411L;
 
-    @NotNull
-    @Column(name = "COLOR", nullable = false, length = 6)
+    @Column(name = "COLOR")
     protected String color;
 
     public String getColor() {

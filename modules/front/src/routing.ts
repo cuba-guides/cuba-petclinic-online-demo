@@ -1,5 +1,5 @@
 import {PetclinicVisitManagement} from './app/visit/PetclinicVisitManagement';
-import {PetclinicVetManagement} from './app/vet/PetclinicVetManagement';
+import {PetclinicVeterinarianManagement} from './app/veterinarian/PetclinicVeterinarianManagement';
 import {PetclinicSpecialtyManagement} from './app/specialty/PetclinicSpecialtyManagement';
 import {PetclinicPetManagement} from './app/pet/PetclinicPetManagement';
 import {PetclinicOwnerManagement} from './app/owner/PetclinicOwnerManagement';
@@ -24,9 +24,9 @@ const petclinicMenu = {
       caption: 'Pets'
     },
     {
-      pathPattern: PetclinicVetManagement.PATH + '/:entityId?',
-      menuLink: PetclinicVetManagement.PATH,
-      component: PetclinicVetManagement,
+      pathPattern: PetclinicVeterinarianManagement.PATH + '/:entityId?',
+      menuLink: PetclinicVeterinarianManagement.PATH,
+      component: PetclinicVeterinarianManagement,
       caption: 'Veterinarians'
     },
     {
