@@ -239,9 +239,9 @@ configure(frontModule) {
 
 
 task undeploy(type: Delete, dependsOn: ":${modulePrefix}-web:cleanConf") {
-    delete("$cuba.tomcat.dir/shared")
-    delete("$cuba.tomcat.dir/webapps/${modulePrefix}-core")
-    delete("$cuba.tomcat.dir/webapps/${modulePrefix}")
+  delete("$cuba.tomcat.dir/shared")
+  delete("$cuba.tomcat.dir/webapps/${modulePrefix}-core")
+  delete("$cuba.tomcat.dir/webapps/${modulePrefix}")
     delete("$cuba.tomcat.dir/webapps/${modulePrefix}-front")
 }
 

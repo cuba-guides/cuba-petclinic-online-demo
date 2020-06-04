@@ -11,7 +11,6 @@ import com.haulmont.cuba.gui.Route;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.backgroundwork.BackgroundWorkWindow;
 import com.haulmont.cuba.gui.components.*;
-import com.haulmont.cuba.gui.components.Button.ClickEvent;
 import com.haulmont.cuba.gui.components.Calendar;
 import com.haulmont.cuba.gui.components.Calendar.CalendarDateClickEvent;
 import com.haulmont.cuba.gui.components.Calendar.CalendarDayClickEvent;
@@ -27,6 +26,9 @@ import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.model.DataContext;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.gui.screen.LookupComponent;
+import com.haulmont.sample.petclinic.entity.visit.Visit;
+import com.haulmont.sample.petclinic.entity.visit.VisitType;
+import com.vaadin.v7.shared.ui.calendar.CalendarState;
 import com.haulmont.cuba.web.AppUI;
 import com.haulmont.sample.petclinic.entity.visit.Visit;
 import com.haulmont.sample.petclinic.entity.visit.VisitType;
@@ -162,17 +164,17 @@ public class VisitBrowse extends StandardLookup<Visit> {
     }
 
     @Subscribe("navigatorPrevious")
-    protected void onNavigatorPreviousClick(ClickEvent event) {
+    protected void onNavigatorPreviousClick(Button.ClickEvent event) {
         previous(calendarMode.getValue());
     }
 
     @Subscribe("navigatorNext")
-    protected void onNavigatorNextClick(ClickEvent event) {
+    protected void onNavigatorNextClick(Button.ClickEvent event) {
         next(calendarMode.getValue());
     }
 
     @Subscribe("navigatorCurrent")
-    protected void onNavigatorCurrentClick(ClickEvent event) {
+    protected void onNavigatorCurrentClick(Button.ClickEvent event) {
         current(calendarMode.getValue());
     }
 
@@ -199,24 +201,23 @@ public class VisitBrowse extends StandardLookup<Visit> {
         change(calendarMode, PREVIOUS, calendarNavigator.getValue());
     }
 
-    private void change(CalendarMode calendarMode, CalendarNavigationMode navigationMode,
-        LocalDate referenceDate) {
+    private void change(CalendarMode calendarMode, CalendarNavigationMode navigationMode, LocalDate referenceDate) {
         this.calendarMode.setValue(calendarMode);
 
         calendarNavigators
-            .forMode(
-                CalendarScreenAdjustment.of(calendar, calendarNavigator, calendarTitle),
-                datatypeFormatter,
-                calendarMode
-            )
-            .navigate(navigationMode, referenceDate);
+                .forMode(
+                        CalendarScreenAdjustment.of(calendar, calendarNavigator, calendarTitle),
+                        datatypeFormatter,
+                        calendarMode
+                )
+                .navigate(navigationMode, referenceDate);
 
         loadEvents();
     }
 
 
     @Subscribe("calendarMode")
-    protected void onCalendarRangeValueChange(ValueChangeEvent event) {
+    protected void onCalendarRangeValueChange(HasValue.ValueChangeEvent event) {
         if (event.isUserOriginated()) {
             atDate((CalendarMode) event.getValue(), calendarNavigator.getValue());
         }
@@ -227,6 +228,8 @@ public class VisitBrowse extends StandardLookup<Visit> {
         visitsCalendarDl.setParameter("visitEnd", calendar.getEndDate());
         visitsCalendarDl.load();
     }
+
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Calendar Visit Event Click
@@ -269,12 +272,13 @@ public class VisitBrowse extends StandardLookup<Visit> {
         visitEditor.show();
     }
 
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Filter for Visit Types
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @Subscribe("typeMultiFilter")
-    protected void onTypeMultiFilterValueChange(ValueChangeEvent event) {
+    protected void onTypeMultiFilterValueChange(HasValue.ValueChangeEvent event) {
 
         if (event.getValue() == null) {
             visitsCalendarDl.removeParameter("type");
@@ -285,6 +289,8 @@ public class VisitBrowse extends StandardLookup<Visit> {
         }
         loadEvents();
     }
+
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Visit Changes through Calendar Event Adjustments
@@ -305,15 +311,15 @@ public class VisitBrowse extends StandardLookup<Visit> {
         visit.setVisitStart(newStart);
         visit.setVisitEnd(newEnd);
         dataContext.commit();
-        notifications.create(NotificationType.TRAY)
-            .withCaption(
-                messageBundle.formatMessage(
-                    "visitUpdated",
-                    messages.getMessage(visit.getType()),
-                    visit.getPetName()
+        notifications.create(Notifications.NotificationType.TRAY)
+                .withCaption(
+                        messageBundle.formatMessage(
+                                "visitUpdated",
+                                messages.getMessage(visit.getType()),
+                                visit.getPetName()
+                        )
                 )
-            )
-            .show();
+                .show();
     }
 
 
