@@ -51,7 +51,9 @@ class PetclinicOwnerEditor extends React.Component<Props> {
         message.warn('Validation Error. Please check the data you entered.');
         return;
       }
-      this.dataInstance.update(this.props.form.getFieldsValue(this.fields))
+      const patch = this.props.form.getFieldsValue(this.fields);
+      delete patch.pets;
+      this.dataInstance.update(patch)
         .then(() => {
           message.success('Entity has been updated');
           this.updated = true;
