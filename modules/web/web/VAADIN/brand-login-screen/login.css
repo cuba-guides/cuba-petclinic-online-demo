@@ -15,7 +15,11 @@
 .c-login-wrapper .c-login-field.password-field {
   border-bottom-left-radius: 6px !important;
   border-bottom-right-radius: 6px !important;
-  margin-top: -15px;
+  margin-top: -1px;
+}
+
+.v-slot-username-field + .v-spacing {
+  display: none;
 }
 
 .dark .v-caption-password-field .v-icon {
