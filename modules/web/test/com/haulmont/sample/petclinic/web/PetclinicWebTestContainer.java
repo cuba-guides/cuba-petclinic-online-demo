@@ -8,10 +8,10 @@ import java.util.Arrays;
 public class PetclinicWebTestContainer extends TestContainer {
 
     public PetclinicWebTestContainer() {
-        appComponents = new ArrayList<>(Arrays.asList(
-                "com.haulmont.cuba"
-                // add CUBA add-ons and custom app components here
-        ));
+        appComponents = Arrays.asList(
+                "com.haulmont.cuba",
+                "com.haulmont.addon.restapi",
+                "com.haulmont.addon.helium");
         appPropertiesFiles = Arrays.asList(
                 // List the files defined in your web.xml
                 // in appPropertiesConfig context parameter of the web module
